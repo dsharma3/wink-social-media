@@ -1,0 +1,38 @@
+{%load static%}
+
+<form action="createfeed" method="Post">
+  {% csrf_token %} 
+  {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+  <div class="central-meta">
+    <div class="new-postbox">
+      <figure>
+        <img src="{%static 'images/resources/admin2.jpg' %}" alt="" />
+      </figure>
+      <div class="newpst-input">
+        <textarea name='feed_text' rows="2" placeholder="write something"></textarea>
+        <div class="attachments">
+          <ul>
+            <li>
+              <button type="submit">Post</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add post new box -->
+</form>
