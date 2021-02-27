@@ -1,6 +1,6 @@
 {%load static%}
 
-<form action="createfeed" method="Post">
+<form action="{% url 'createfeed' %}" method="Post">
   {% csrf_token %} 
   {% if form.errors %}
             {% for field in form %}
