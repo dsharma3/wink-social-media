@@ -1,0 +1,33 @@
+{% extends 'wink_landing/base.html' %} {% block block_quote %}
+
+
+{% load static  %}
+<div class="central-meta item" style="align:center">
+<div class="col-lg-3">
+  <aside class="sidebar static">
+    <div class="widget friend-list stick-widget">
+      <h4 class="widget-title">Friends</h4>
+
+      <ul id="people-list" class="friendz-list">
+      {% if search_users%}
+      {% for user in search_users %}
+        <li>         
+          <div class="friendz-meta">
+           <span>{{user.username}}</span>
+          </div>
+        </li>
+        {%endfor%}
+        {%else%}
+          <li>         
+          <div class="friendz-meta">
+           <span>Not found</span>
+          </div>
+        </li>
+        {%endif%}
+      </ul>
+    </div>
+  </aside>
+</div>
+</div>
+
+{% endblock %}

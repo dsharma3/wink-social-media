@@ -1,9 +1,8 @@
 {%load static%} 
-{% for comment in  comments%}
-
-
    <div class="coment-area">
       <ul class="we-comet">
+      {% for comment in  feed.comments.all%}
+
         <li>
           <div class="comet-avatar">
             <img src="{% static 'images/resources/comet-1.jpg' %}" alt="" />
@@ -21,6 +20,8 @@
             </p>
           </div>
         </li>
+    {% endfor %}
+
         {% comment %} <li>
           <div class="comet-avatar">
             <img src="{% static 'images/resources/comet-2.jpg' %}" alt="" />
@@ -101,4 +102,3 @@
         </li>
       </ul>
     </div>
-    {% endfor %}
