@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "wink_landing"
+    "wink_landing",
+    "account"
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    BASE_DIR / 'static'
 ]
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

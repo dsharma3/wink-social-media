@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views
-
+from .views import SignUp
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("wink_landing.urls")),
-    path('accounts/', include("account.urls")),
-    path('accounts/', include("django.contrib.auth.urls")),
+    path(r"accounts/", include("django.contrib.auth.urls")),
+    path("signup/",SignUp.as_view(), name='signup'),
 ]

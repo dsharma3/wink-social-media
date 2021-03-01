@@ -33,11 +33,16 @@
 		
 		<div class="top-area">	
 			<div class="top-search">
-				<form method="post" class="">
-					<input type="text" placeholder="Search Friend">
+				<form method="Post" action="{%url 'searchfriends' %}" class="">
+					{% csrf_token %}
+					<input name="search" type="text" placeholder="Search Friend">
 					<button data-ripple><i class="ti-search"></i></button>
+
 				</form>
-			</div>		
+
+			</div>
+					<a href="{%url 'logout' %}">Logout</a>
+
 			<div class="user-img">
 				<img src="{%static 'images/resources/admin.jpg' %}" alt="">
 				<span class="status f-online"></span>
